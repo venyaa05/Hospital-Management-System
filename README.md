@@ -125,8 +125,6 @@ The project demonstrates SQL operations including:
 | 👨‍⚕️ Doctors | `doctor_id` | Doctor_Department |
 | 🏢 Departments | `department_id` | Doctor_Department |
 
-The SQL defines these tables and their primary/foreign-key relationships. :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1} :contentReference[oaicite:2]{index=2} :contentReference[oaicite:3]{index=3} :contentReference[oaicite:4]{index=4}
-
 ---
 
 # 🧑‍⚕️ Patients
@@ -144,11 +142,11 @@ The SQL defines these tables and their primary/foreign-key relationships. :conte
 | `address` | VARCHAR(150) | — |
 | `registration_date` | DATE | — |
 
-The `Patients` table uses `patient_id` as its primary key. :contentReference[oaicite:5]{index=5}
+The `Patients` table uses `patient_id` as its primary key.
 
 ## 👥 Patient Records
 
-The SQL inserts patient records containing names, dates of birth, gender, phone numbers, email addresses, addresses and registration dates. :contentReference[oaicite:6]{index=6}
+The SQL inserts patient records containing names, dates of birth, gender, phone numbers, email addresses, addresses and registration dates.
 
 ```sql
 SELECT * FROM Patients;
@@ -156,7 +154,8 @@ SELECT * FROM Patients;
 
 ### 📸 Screenshot 1 — Patient Records
 
-<img src="./assets/patient-records.png" alt="Patient Records" width="95%">
+<img width="850" height="175" alt="Screenshot 01" src="https://github.com/user-attachments/assets/8edf4008-4bd8-41ff-92e9-24f3280acb1b" />
+
 
 ---
 
@@ -177,11 +176,12 @@ ORDER BY total_paid DESC
 LIMIT 5;
 ```
 
-:contentReference[oaicite:7]{index=7}
+
 
 ### 📸 Screenshot 2 — Patient Total Paid
 
-<img src="./assets/patient-total-paid.png" alt="Patient Total Paid" width="70%">
+<img width="226" height="82" alt="Screenshot 3" src="https://github.com/user-attachments/assets/9f18c9b6-5ab5-4681-9fa4-8e1c38a3fce1" />
+
 
 ---
 
@@ -200,7 +200,7 @@ LIMIT 5;
 | `consultation_fee` | DECIMAL(10,2) | — |
 | `experience_years` | INT | — |
 
-The `Doctors` table stores doctor information including specialization, availability, consultation fees and experience. :contentReference[oaicite:0]{index=0}
+The `Doctors` table stores doctor information including specialization, availability, consultation fees and experience.
 
 ## 👨‍⚕️ Doctor Records
 
@@ -210,7 +210,8 @@ SELECT * FROM Doctors;
 
 ### 📸 Screenshot 3 — Doctor Records
 
-<img src="./assets/doctor-records.png" alt="Doctor Records" width="95%">
+<img width="1000" height="201" alt="Screenshot 5" src="https://github.com/user-attachments/assets/854905d1-5312-40d7-be47-d6c9933af2e5" />
+
 
 ---
 
@@ -226,7 +227,7 @@ SELECT * FROM Doctors;
 | `appointment_date` | DATETIME | — |
 | `status` | ENUM | — |
 
-The appointment status is defined as `Scheduled`, `Completed`, or `Cancelled`. :contentReference[oaicite:1]{index=1}
+The appointment status is defined as `Scheduled`, `Completed`, or `Cancelled`. 
 
 ## 🔎 Scheduled Dermatology Appointments
 
@@ -236,8 +237,6 @@ FROM Appointments
 WHERE status='Scheduled'
 AND doctor_id=3;
 ```
-
-:contentReference[oaicite:2]{index=2}
 
 ---
 
@@ -254,11 +253,11 @@ ON d.doctor_id=a.doctor_id
 GROUP BY d.doctor_id,d.name;
 ```
 
-:contentReference[oaicite:3]{index=3}
 
 ### 📸 Screenshot 4 — Doctor Patient Count
 
-<img src="./assets/doctor-patient-count.png" alt="Doctor Patient Count" width="80%">
+<img width="282" height="157" alt="Screenshot 6" src="https://github.com/user-attachments/assets/34a4578b-df1e-48b0-9452-519010a853cd" />
+
 
 ---
 
@@ -280,11 +279,11 @@ WHERE b.payment_status='Paid'
 GROUP BY dept.department_id;
 ```
 
-:contentReference[oaicite:4]{index=4}
 
 ### 📸 Screenshot 5 — Department Revenue
 
-<img src="./assets/department-revenue.png" alt="Department Revenue" width="75%">
+<img width="255" height="130" alt="Screenshot 7" src="https://github.com/user-attachments/assets/4bbeecb6-e054-47be-b2fb-512458bdad4d" />
+
 
 ---
 
@@ -302,7 +301,6 @@ FROM Billing
 WHERE payment_status='Paid';
 ```
 
-:contentReference[oaicite:5]{index=5}
 
 ---
 
@@ -317,7 +315,7 @@ FROM Appointments
 GROUP BY MONTH(appointment_date);
 ```
 
-:contentReference[oaicite:6]{index=6}
+
 
 ## 🏆 Doctor With Most Visits
 
@@ -332,7 +330,7 @@ ORDER BY visits DESC
 LIMIT 1;
 ```
 
-:contentReference[oaicite:7]{index=7}
+
 
 ---
 
@@ -352,7 +350,8 @@ ON dd.department_id=dept.department_id;
 
 ### 📸 Screenshot 6 — Doctor Department JOIN
 
-<img src="./assets/doctor-department.png" alt="Doctor Department Join" width="80%">
+<img width="307" height="165" alt="Screenshot 8" src="https://github.com/user-attachments/assets/e4f82c71-8243-4a27-8771-e9acfead8467" />
+
 
 ---
 
@@ -421,7 +420,7 @@ RIGHT JOIN Appointments a
 ON p.patient_id=a.patient_id;
 ```
 
-The SQL project uses `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, and a FULL OUTER JOIN simulation using `UNION`. :contentReference[oaicite:0]{index=0}
+The SQL project uses `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, and a FULL OUTER JOIN simulation using `UNION`.
 
 ---
 
@@ -441,11 +440,12 @@ ON d.doctor_id=a.doctor_id
 GROUP BY d.doctor_id,d.name;
 ```
 
-:contentReference[oaicite:1]{index=1}
+
 
 ### 📸 Screenshot 7 — Doctor Ranking
 
-<img src="./assets/doctor-ranking.png" alt="Doctor Ranking" width="80%">
+<img width="422" height="151" alt="Screenshot 14" src="https://github.com/user-attachments/assets/842e2f5b-0721-4854-80f2-10b0ecf3087f" />
+
 
 ---
 
@@ -463,11 +463,12 @@ FROM Billing
 WHERE payment_status='Paid';
 ```
 
-:contentReference[oaicite:2]{index=2}
+
 
 ### 📸 Screenshot 8 — Cumulative Revenue
 
-<img src="./assets/cumulative-revenue.png" alt="Cumulative Revenue" width="80%">
+<img width="367" height="112" alt="Screenshot 15" src="https://github.com/user-attachments/assets/8d20fe16-6eb6-4c2e-94a2-36d7c77b689c" />
+
 
 ---
 
@@ -499,11 +500,11 @@ ON p.patient_id=m.patient_id
 GROUP BY p.patient_id,p.name;
 ```
 
-:contentReference[oaicite:0]{index=0}
+
 
 ### 📸 Screenshot 9 — Patient Risk Level
+<img width="351" height="165" alt="Screenshot 17" src="https://github.com/user-attachments/assets/02f7d445-fb49-4649-8edf-c13dfad24dfd" />
 
-<img src="./assets/patient-risk.png" alt="Patient Risk Level" width="80%">
 
 ---
 
@@ -522,11 +523,12 @@ SELECT name,
 FROM Doctors;
 ```
 
-:contentReference[oaicite:1]{index=1}
+
 
 ### 📸 Screenshot 10 — Doctor Experience Category
 
-<img src="./assets/doctor-category.png" alt="Doctor Experience Category" width="80%">
+<img width="427" height="185" alt="Screenshot 18" src="https://github.com/user-attachments/assets/7aa3d743-e8b6-45c6-8d45-2de82e0e3d16" />
+
 
 ---
 
@@ -545,8 +547,6 @@ FROM Doctors;
 | `admission_date` | DATE |
 | `discharge_date` | DATE |
 
-:contentReference[oaicite:2]{index=2}
-
 ---
 
 # ⏳ Hospital Stay Analysis
@@ -562,7 +562,7 @@ SELECT record_id,
 FROM Medical_Records;
 ```
 
-:contentReference[oaicite:3]{index=3}
+
 
 ---
 
@@ -577,7 +577,6 @@ SELECT record_id,
 FROM Medical_Records;
 ```
 
-:contentReference[oaicite:4]{index=4}
 
 ---
 
@@ -605,7 +604,7 @@ SELECT name,
 FROM Doctors;
 ```
 
-:contentReference[oaicite:5]{index=5}
+
 
 ---
 
@@ -624,8 +623,6 @@ WHERE NOT EXISTS
 );
 ```
 
-:contentReference[oaicite:6]{index=6}
-
 ---
 
 ## 💰 Patient Spending the Most
@@ -642,7 +639,7 @@ ORDER BY total_spent DESC
 LIMIT 1;
 ```
 
-:contentReference[oaicite:7]{index=7}
+
 
 ---
 
@@ -892,61 +889,67 @@ Doctor_Department
 
 ### 🧑‍⚕️ Patient Records
 
-<img src="./assets/patient-records.png" width="95%" alt="Patient Records">
+<img width="850" height="175" alt="Screenshot 01" src="https://github.com/user-attachments/assets/ee7633a7-d1d4-4d9e-a213-c8be32b1dfd0" />
+
 
 <br><br>
 
 ### 💳 Patient Total Paid
+<img width="226" height="82" alt="Screenshot 3" src="https://github.com/user-attachments/assets/da1391c6-88ed-45d1-aa91-242648ef89af" />
 
-<img src="./assets/patient-total-paid.png" width="70%" alt="Patient Total Paid">
 
 <br><br>
 
 ### 👨‍⚕️ Doctor Records
+<img width="1000" height="201" alt="Screenshot 5" src="https://github.com/user-attachments/assets/7ee387b1-f50a-4843-bdd0-0ef894577b20" />
 
-<img src="./assets/doctor-records.png" width="95%" alt="Doctor Records">
 
 <br><br>
 
 ### 📊 Doctor Patient Count
 
-<img src="./assets/doctor-patient-count.png" width="80%" alt="Doctor Patient Count">
+<img width="282" height="157" alt="Screenshot 6" src="https://github.com/user-attachments/assets/605f476c-e914-4eed-8af6-c1d948627fb3" />
+
 
 <br><br>
 
 ### 🏢 Department Revenue
 
-<img src="./assets/department-revenue.png" width="75%" alt="Department Revenue">
+<img width="255" height="130" alt="Screenshot 7" src="https://github.com/user-attachments/assets/473c26fa-bf67-4591-90fa-53b5e8071cf8" />
 
 <br><br>
 
 ### 🔗 Doctor Department JOIN
 
-<img src="./assets/doctor-department.png" width="80%" alt="Doctor Department">
+<img width="307" height="165" alt="Screenshot 8" src="https://github.com/user-attachments/assets/3876b86f-126c-41cc-a852-aa3ec3ac9b46" />
+
 
 <br><br>
 
 ### 🏆 Doctor Ranking
 
-<img src="./assets/doctor-ranking.png" width="80%" alt="Doctor Ranking">
+<img width="422" height="151" alt="Screenshot 14" src="https://github.com/user-attachments/assets/10e3c139-9b9e-4d1d-93c0-61fc94c0b278" />
+
 
 <br><br>
 
 ### 📈 Cumulative Revenue
 
-<img src="./assets/cumulative-revenue.png" width="80%" alt="Cumulative Revenue">
+<img width="367" height="112" alt="Screenshot 15" src="https://github.com/user-attachments/assets/b5f48d6a-a8de-4204-9e39-a34c645f500e" />
 
 <br><br>
 
 ### 🧠 Patient Risk Level
 
-<img src="./assets/patient-risk.png" width="80%" alt="Patient Risk Level">
+<img width="351" height="165" alt="Screenshot 17" src="https://github.com/user-attachments/assets/c2fa0737-eb5b-4deb-96a0-72cee67db616" />
+
 
 <br><br>
 
 ### 💼 Doctor Experience Category
 
-<img src="./assets/doctor-category.png" width="80%" alt="Doctor Experience Category">
+<img width="427" height="185" alt="Screenshot 18" src="https://github.com/user-attachments/assets/4af897ff-502c-4fe4-a376-db383e1ad86a" />
+
 
 </div>
 
